@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { IPData, LookupResult } from "@/types";
 
-export const runtime = "edge";
-
 function getClientIP(request: NextRequest): string | null {
   const cfIP = request.headers.get("cf-connecting-ip");
   if (cfIP) return cfIP;
