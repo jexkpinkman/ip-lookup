@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { IPData, LookupResult } from "@/types";
 
-export const runtime = "edge";
-
 export async function GET(request: NextRequest): Promise<NextResponse<LookupResult>> {
   const { searchParams } = new URL(request.url);
   const ip = searchParams.get("ip");
